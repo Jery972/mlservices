@@ -56,11 +56,18 @@ p {
 /* HEADER */
 
 header {
+  position: fixed;
   background-color: #fff;
   padding: 14px 72px;
   display: flex;
-  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre subtile */
+  z-index: 1000; /* Assure que le menu reste au-dessus du contenu */
+}
+#header-container {
+  display: flex;
   justify-content: space-between;
+  width: 100%;
   margin-inline: auto;
   max-width: 1296px;
 }
@@ -99,7 +106,7 @@ nav a {
 }
 .cta-little:hover,
 .cta-little:focus {
-  background-color: #014fdf;
+  background-color: #0141b7;
   text-decoration: none;
 }
 .cta-little img {
@@ -112,6 +119,7 @@ nav a {
 #hero-section {
   background-image: url(../images/shutter-worker.jpg);
   padding: 140px 72px;
+  padding-top: 220px;
   background-position: center;
   background-size: cover;
 }
@@ -142,7 +150,7 @@ nav a {
 .cta-button:hover,
 .cta-button:focus {
   text-decoration: none;
-  background-color: #014fdf;
+  background-color: #0141b7;
 }
 .cta-span {
   display: flex;
