@@ -61,6 +61,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-inline: auto;
+  max-width: 1296px;
 }
 #menu {
   display: flex;
@@ -97,7 +99,7 @@ nav a {
 }
 .cta-little:hover,
 .cta-little:focus {
-  background-color: lightblue;
+  background-color: #014fdf;
   text-decoration: none;
 }
 .cta-little img {
@@ -111,11 +113,18 @@ nav a {
   background-image: url(../images/shutter-worker.jpg);
   padding: 140px 72px;
   background-position: center;
+  background-size: cover;
 }
 #hero-section p {
   margin-top: 14px;
   margin-bottom: 55px;
   color: var(--gray);
+}
+#hero-container {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  max-width: 1296px;
 }
 .bottom-hero {
   display: flex;
@@ -133,7 +142,7 @@ nav a {
 .cta-button:hover,
 .cta-button:focus {
   text-decoration: none;
-  background-color: lightblue;
+  background-color: #014fdf;
 }
 .cta-span {
   display: flex;
@@ -171,6 +180,11 @@ nav a {
   background-color: var(--main-color);
   padding: 140px 72px;
   display: flex;
+}
+#about-container {
+  display: flex;
+  margin-inline: auto;
+  max-width: 1296px;
   gap: 115px;
 }
 #about-section img {
@@ -200,6 +214,12 @@ nav a {
 #service-section h2 {
   margin-bottom: 64px;
 }
+#service-big {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  max-width: 1296px;
+}
 .row-service {
   display: flex;
   gap: 32px;
@@ -225,10 +245,18 @@ nav a {
   align-items: center;
   background-color: var(--gray);
 }
-#why-section h2 {
+#why-container {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  max-width: 1296px;
+  align-items: center;
+}
+#why-container h2 {
   color: var(--black);
   margin-bottom: 64px;
 }
+
 .why-row {
   display: flex;
   gap: 32px;
