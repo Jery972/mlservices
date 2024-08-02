@@ -13,22 +13,32 @@ async function fetchImages() {
     doc.querySelectorAll("a").forEach((link) => {
       const href = link.getAttribute("href");
       if (href.match(/\.(jpe?g|png|gif|bmp|webp)$/i)) {
-        images.push(href);
+        images.push(href); // Assurez-vous que les URLs sont corrects
       }
     });
 
-    console.log(images);
+    addImagesToSwiper(images);
   } catch (error) {
     console.error("Erreur:", error);
   }
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  fetchImages();
-});
+function addImagesToSwiper(imageUrls) {
+  const swiperWrapper = document.querySelector(".swiper-wrapper");
+  imageUrls.forEach((url, index) => {
+    const slide = document.createElement("div");
+    slide.classList.add("swiper-slide");
 
-document.addEventListener("DOMContentLoaded", function () {
-  var swiper = new Swiper(".swiper", {
+    const img = document.createElement("img");
+    img.src = url;
+    img.alt = `Image du volet roulant ${index + 1}`;
+
+    slide.appendChild(img);
+    swiperWrapper.appendChild(slide);
+  });
+
+  // Initialiser Swiper après avoir ajouté les slides
+  const swiper = new Swiper(".swiper", {
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -36,6 +46,13 @@ document.addEventListener("DOMContentLoaded", function () {
     autoplay: {
       delay: 4000,
     },
-    loop: true,
+    loop: imageUrls.length > 1, // Activer le mode boucle uniquement s'il y a plus d'une diapositive
   });
+
+  // Mettre à jour Swiper après avoir ajouté les slides
+  swiper.update();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchImages();
 });

@@ -4,6 +4,10 @@
   --gray: #f3f4f6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -281,7 +285,8 @@ nav a {
 #carousel-section {
   margin-inline: auto;
   max-width: 1440px;
-  padding: 70px 72px;
+  padding-inline: 72px;
+  padding-block: 70px 118px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -329,4 +334,22 @@ nav a {
   margin-left: 15px;
 }
 
-/* CAROUSEL */
+/* ADVICE SECTION */
+#advice-section {
+  padding: 83px 72px;
+  background-image: url(/assets/images/shutter-close.jpg);
+  background-size: cover;
+  background-position: center;
+}
+#advice-container {
+  max-width: 1296px;
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  align-items: center;
+}
+.advice-title {
+  display: flex;
+  gap: 18px;
+  flex-direction: column;
+}
