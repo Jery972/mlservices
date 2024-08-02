@@ -1,64 +1,41 @@
-// script.js
-document.addEventListener("DOMContentLoaded", async () => {
-  const carouselImagesContainer = document.querySelector(".carousel__images");
-  const prevButton = document.querySelector(".carousel__button--prev");
-  const nextButton = document.querySelector(".carousel__button--next");
+async function fetchImages() {
+  const folderUrl = "assets/images/carousel/"; // Le chemin vers le dossier contenant les images
+  try {
+    const response = await fetch(folderUrl);
+    if (!response.ok) {
+      throw new Error("Erreur lors de la récupération du contenu du dossier");
+    }
+    const text = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, "text/html");
 
-  let currentIndex = 0;
-  let images = [];
-
-  // Fonction pour récupérer les images depuis un dossier
-  function loadGalleryImages() {
-    const imagePath = `/assets/images/carousel/`;
-    // const imagePath = `/images/galleryPictures/vitre/`;
-
-    fetch(imagePath)
-      .then((response) => response.text())
-      .then((html) => {
-        const tempDiv = document.createElement("div");
-        tempDiv.innerHTML = html;
-
-        const imageLinks = Array.from(tempDiv.querySelectorAll("a"));
-
-        imageLinks.splice(0, 5);
-        console.log(imageLinks);
-      })
-      .catch((error) =>
-        console.error("Erreur lors de la récupération du contenu HTML :", error)
-      );
-  }
-  // Mettre à jour le carrousel avec les images récupérées
-  function updateCarousel() {
-    carouselImagesContainer.innerHTML = "";
-    images.forEach((imageSrc) => {
-      const img = document.createElement("img");
-      img.src = imageSrc;
-      carouselImagesContainer.appendChild(img);
+    const images = [];
+    doc.querySelectorAll("a").forEach((link) => {
+      const href = link.getAttribute("href");
+      if (href.match(/\.(jpe?g|png|gif|bmp|webp)$/i)) {
+        images.push(href);
+      }
     });
-    showImage(currentIndex);
+
+    console.log(images);
+  } catch (error) {
+    console.error("Erreur:", error);
   }
+}
 
-  // Afficher l'image à l'index spécifié
-  function showImage(index) {
-    const imageWidth = carouselImagesContainer.querySelector("img").clientWidth;
-    carouselImagesContainer.style.transform = `translateX(-${
-      index * imageWidth
-    }px)`;
-  }
-
-  // Navigation avec les flèches
-  prevButton.addEventListener("click", () => {
-    currentIndex = currentIndex > 0 ? currentIndex - 1 : images.length - 1;
-    showImage(currentIndex);
-  });
-
-  nextButton.addEventListener("click", () => {
-    currentIndex = currentIndex < images.length - 1 ? currentIndex + 1 : 0;
-    showImage(currentIndex);
-  });
-
-  // Initialiser le carrousel
-  await fetchImages();
+document.addEventListener("DOMContentLoaded", () => {
+  fetchImages();
 });
 
-loadGalleryImages();
+document.addEventListener("DOMContentLoaded", function () {
+  var swiper = new Swiper(".swiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    autoplay: {
+      delay: 4000,
+    },
+    loop: true,
+  });
+});
