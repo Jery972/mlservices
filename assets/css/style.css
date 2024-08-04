@@ -2,13 +2,6 @@
   --main-color: #0b60fe;
   --black: #1f2937;
   --gray: #f3f4f6;
-  --62px: 3.875rem;
-  --52px: 3.25rem;
-  --36px: 2.25rem;
-  --24px: 1.5rem;
-  --20px: 1.25rem;
-  --18px: 1.125rem;
-  --16px: 1rem;
 }
 
 html {
@@ -43,24 +36,24 @@ h1 {
   color: #fff;
   line-height: 4.375rem;
   font-weight: 700;
-  font-size: var(--62px);
+  font-size: 3.875rem;
 }
 h2 {
   color: #fff;
   font-weight: 700;
-  font-size: var(--52px);
+  font-size: 3.25rem;
   line-height: 3.5rem;
 }
 h3 {
   color: #fff;
   font-weight: 700;
-  font-size: var(--20px);
+  font-size: 1.25rem;
   line-height: 1.75rem;
 }
 p {
   color: #fff;
   font-weight: 400;
-  font-size: var(--18px);
+  font-size: 1.125rem;
   line-height: 1.75rem;
 }
 
@@ -98,7 +91,7 @@ nav {
 }
 nav a {
   color: var(--black);
-  font-size: var(--18px);
+  font-size: 1.125rem;
   font-weight: 500;
   line-height: 1.75rem;
 }
@@ -112,8 +105,8 @@ nav a {
   gap: 12px;
   color: #fff;
   font-weight: 700;
-  font-size: var(--16px);
-  line-height: var(--18px);
+  font-size: 1rem;
+  line-height: 1.125rem;
 }
 .cta-little:hover,
 .cta-little:focus {
@@ -169,20 +162,15 @@ nav a {
   flex-direction: column;
   gap: 2px;
 }
-.cta-span {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
 .cta-span :nth-child(1) {
-  font-size: var(--16px);
-  line-height: var(--18px);
+  font-size: 1rem;
+  line-height: 1.125rem;
   font-weight: 700;
   color: #fff;
 }
 .cta-span :nth-child(2) {
-  font-size: var(--16px);
-  line-height: var(--18px);
+  font-size: 1rem;
+  line-height: 1.125rem;
   font-weight: 500;
   color: #fff;
 }
@@ -190,8 +178,8 @@ nav a {
   display: flex;
   gap: 10px;
   color: var(--gray);
-  font-size: var(--16px);
-  line-height: var(--24px);
+  font-size: 1rem;
+  line-height: 1.5rem;
   font-weight: 500;
 }
 
@@ -211,9 +199,12 @@ nav a {
 
 #about-image {
   flex: 1;
+  height: 100%;
 }
 #about-image img {
   object-fit: cover;
+  height: 100%;
+  border-radius: 8px;
 }
 .about-text {
   flex: 1;
@@ -382,7 +373,7 @@ footer {
   color: #fff;
   line-height: 2.75rem;
   font-weight: 700;
-  font-size: var(--36px);
+  font-size: 2.25rem;
   margin-bottom: 4px;
 }
 
@@ -390,7 +381,7 @@ footer {
   color: #fff;
   line-height: 1.75rem;
   font-weight: 500;
-  font-size: var(--18px);
+  font-size: 1.125rem;
 }
 .footer-left p:nth-of-type(1) {
   margin-bottom: 78px;
@@ -404,7 +395,7 @@ footer {
   color: #fff;
   line-height: 2rem;
   font-weight: 700;
-  font-size: var(--24px);
+  font-size: 1.5rem;
 }
 .footer-right a {
   color: #fff;
@@ -415,11 +406,210 @@ footer {
   color: #fff;
   line-height: 1.75rem;
   font-weight: 500;
-  font-size: var(--18px);
+  font-size: 1.125rem;
   gap: 12px;
   align-self: flex-start;
 }
 .contact-info img {
   width: 24px;
   height: 24px;
+}
+
+/* BREAKPOINTS */
+@media screen and (max-width: 53rem) {
+  html {
+    font-size: 0.9rem;
+  }
+  header {
+    padding: 14px 42px;
+  }
+  nav {
+    padding-inline: 42px;
+  }
+  #hero-section {
+    padding: 110px 42px;
+    padding-top: 190px;
+  }
+  #about-section {
+    padding: 110px 42px;
+  }
+  #service-section {
+    padding: 40px 42px;
+  }
+  #why-section {
+    padding: 40px 42px;
+  }
+  #carousel-section {
+    padding-inline: 42px;
+    padding-block: 40px 88px;
+  }
+  #advice-section {
+    padding: 53px 42px;
+  }
+  footer {
+    padding: 72px 42px 44px 42px;
+  }
+  #carousel-section p {
+    margin-top: 18px;
+    margin-bottom: 24px;
+  }
+}
+@media screen and (max-width: 41rem) {
+  html {
+    font-size: 0.7rem;
+  }
+}
+@media screen and (max-width: 35rem) {
+  html {
+    font-size: 1rem;
+  }
+  h1 {
+    line-height: 2.25rem;
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  h2 {
+    font-weight: 700;
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  h3 {
+    font-weight: 700;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+  }
+  p {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .dispo-container {
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+  .cta-little {
+    background-color: var(--main-color);
+    padding: 8px 16px;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+  }
+  .cta-button {
+    padding: 8px 16px;
+    gap: 8px;
+    min-width: 148px;
+  }
+  .cta-button img {
+    width: 24px;
+    height: 24px;
+  }
+  .cta-span {
+    gap: 0px;
+  }
+  .cta-span :nth-child(1) {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    font-weight: 700;
+  }
+  .cta-span :nth-child(2) {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    font-weight: 500;
+  }
+  header {
+    padding: 14px 16px;
+  }
+  nav {
+    display: none;
+  }
+  #hero-section {
+    padding: 90px 16px;
+    padding-top: 170px;
+  }
+  #hero-section p {
+    margin-bottom: 32px;
+  }
+  .bottom-hero {
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #about-section {
+    padding: 45px 16px;
+  }
+  #about-container {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .about-text {
+    gap: 20px;
+  }
+  #service-section {
+    padding: 32px 16px;
+    text-align: center;
+  }
+  #service-section h2 {
+    margin-bottom: 32px;
+  }
+  .row-service {
+    flex-direction: column;
+    gap: 24px;
+  }
+  .row-service:first-of-type {
+    margin-bottom: 24px;
+  }
+  #why-section {
+    padding: 32px 16px;
+  }
+  #why-container h2 {
+    margin-bottom: 32px;
+  }
+  #why-container h3 {
+    font-weight: 600;
+    line-height: 1.5rem;
+    font-size: 1rem;
+  }
+  .why-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .why-card {
+    max-width: 300px;
+  }
+  #carousel-section {
+    padding: 32px 16px;
+  }
+  .swiper-wrapper {
+    height: 350px;
+  }
+  #advice-section {
+    padding: 32px 16px;
+  }
+  #advice-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .advice-title {
+    margin-bottom: 32px;
+  }
+  footer {
+    padding: 32px 16px;
+  }
+  #footer-container {
+    flex-direction: column;
+    gap: 68px;
+  }
+  .footer-left p:nth-of-type(1) {
+    margin-bottom: 32px;
+  }
+  .footer-left p:nth-of-type(2) {
+    line-height: 1.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
 }
