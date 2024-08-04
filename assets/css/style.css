@@ -341,7 +341,7 @@ nav a {
 /* ADVICE SECTION */
 #advice-section {
   padding: 83px 72px;
-  background-image: url(/assets/images/shutter-close.jpg);
+  background-image: url(../images/shutter-close.jpg);
   background-size: cover;
   background-position: center;
 }
