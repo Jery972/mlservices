@@ -187,6 +187,7 @@ nav a {
 #about-section {
   background-color: var(--main-color);
   padding: 140px 72px;
+  padding-bottom: 95px;
   display: flex;
 }
 #about-container {
@@ -215,6 +216,11 @@ nav a {
 
 /* SERVICES SECTION */
 
+#services {
+  height: 45px;
+  width: 100%;
+  background-color: var(--main-color);
+}
 #service-section {
   background-color: #fff;
   padding: 70px 72px;
@@ -432,6 +438,7 @@ footer {
   }
   #about-section {
     padding: 110px 42px;
+    padding-bottom: 65px;
   }
   #service-section {
     padding: 40px 42px;
@@ -538,6 +545,7 @@ footer {
   }
   #about-section {
     padding: 45px 16px;
+    padding-bottom: 0px;
   }
   #about-container {
     display: flex;
