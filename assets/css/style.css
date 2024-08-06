@@ -258,6 +258,8 @@ nav a {
   flex: 1;
 }
 .service-container img {
+  width: 72px;
+  height: 72px;
   margin-bottom: 24px;
 }
 .service-container h3 {
